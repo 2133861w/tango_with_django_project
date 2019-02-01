@@ -17,22 +17,22 @@ def populate():
 
     # List of Dictionaries of "Python" Category pages... Tile:value, URL:value
     python_pages = [
-        {"title": "Official Python Tutorial", "url": "https://docs.python.org/2/tutorial/"},
-        {"title": "How to think like a Computer Scientist" ,"url": "http://www.greenteapress.com/thinkpython/"},
-        {"title": "Learn python in Ten Minutes" ,"url": "https://www.korokithakis.net/tutorials"}
+        {"title": "Official Python Tutorial", "url": "https://docs.python.org/2/tutorial/", "views": 1},
+        {"title": "How to think like a Computer Scientist" ,"url": "http://www.greenteapress.com/thinkpython/",  "views": 2},
+        {"title": "Learn python in Ten Minutes" ,"url": "https://www.korokithakis.net/tutorials",  "views": 3}
     ]
 
     # List of Dictionaries of "django" Category pages... Title:value, URL:value
     django_pages = [
-        {"title":"Official Django Tutorial" ,"url":"https://docs.djangoprojects.com/en/1.11/intro/tutorial01/"},
-        {"title":"Django Rocks" ,"url":"https://www.djangorocks.com"},
-        {"title":"How to Tango with Django" ,"url":"https://tangowithdjango.com/"}
+        {"title":"Official Django Tutorial" ,"url":"https://docs.djangoprojects.com/en/1.11/intro/tutorial01/",  "views": 4},
+        {"title":"Django Rocks" ,"url":"https://www.djangorocks.com",  "views": 5},
+        {"title":"How to Tango with Django" ,"url":"https://tangowithdjango.com/",  "views": 6}
     ]
 
     # List of Dictionaries of "Other" Category pages... Title:value, URL:value
     other_pages = [
-        {"title":"Bottle" ,"url":"http://bottlepy.org/docs/dev/"},
-        {"title":"Flask" ,"url":"http://flask.pocoo.org/"}
+        {"title":"Bottle" ,"url":"http://bottlepy.org/docs/dev/",  "views": 7},
+        {"title":"Flask" ,"url":"http://flask.pocoo.org/",  "views": 8}
 
     ]
 
@@ -56,7 +56,7 @@ def populate():
     for cat, cat_data in cats.items():
         c = add_cat(cat, cat_data["views"], cat_data["likes"])
         for p in cat_data["pages"]:
-            add_page(c, p["title"], p["url"])
+            add_page(c, p["title"], p["url"],p["views"])
 
     # Print out the categories we have added.    
     for c in Category.objects.all():
